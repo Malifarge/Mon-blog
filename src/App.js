@@ -2,6 +2,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 import './App.css';
 
+import Article from './Pages/Article';
 import Home from './Pages/Home';
 
 const App = () => {
@@ -9,6 +10,8 @@ const App = () => {
         <BrowserRouter>
               <Routes>
                   <Route path='/' element={<Home/>}/>
+                  <Route path='/:id' element={<Article/>}/>
+
               </Routes>
         </BrowserRouter>
   );
