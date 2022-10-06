@@ -1,7 +1,17 @@
+import { usePrismicDocumentByID,PrismicRichText } from "@prismicio/react"
+import { useParams } from "react-router-dom"
+
+import H1 from "../Components/H1"
+
 const Article = () =>{
+
+    const {id} = useParams()
+    const [Post] = usePrismicDocumentByID(id)
+
     return(
         <>
-            <h1>Test</h1>
+            <H1>Article</H1>
+            {Post ? <><PrismicRichText field={Post.data.title} /> <PrismicRichText field={Post.data.content}/></> : <p>L'article charge</p>}
         </>
     )
 }
