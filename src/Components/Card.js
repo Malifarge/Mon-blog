@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 import { PrismicRichText } from "@prismicio/react"
 
+import Button from "./Button";
+
 const Card = ({document})=>{
 
     const navigate=useNavigate()
@@ -16,7 +18,7 @@ const Card = ({document})=>{
             <div className="see">
                 <PrismicRichText field={document.data.content}/>
             </div>
-            <button onClick={handleSeeClick}>voir plus</button>
+            <Button handleClick={handleSeeClick} text='voir plus'/>
         </article>
     )
 }

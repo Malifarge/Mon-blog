@@ -1,7 +1,6 @@
 import { useAllPrismicDocumentsByTag} from "@prismicio/react"
 
 import Card from "../Components/Card"
-import H1 from "../Components/H1"
 import H2 from "../Components/H2"
 
 const Home = () =>{
@@ -11,7 +10,7 @@ const Home = () =>{
 
     return(
         <> 
-            <H1>H<span>o</span>me</H1>
+            <H2 home>H<span>o</span>me</H2>
             <H2>Séries</H2>
             {Séries && <section className="scroll">
 

@@ -6,9 +6,20 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-h1{
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img{
+  width: 60px;
+}
+
+h1, .home{
   text-align: center;
   font-family: 'Fascinate Inline', cursive;
+  font-size: 30px;
 }
 
 h2{
@@ -49,8 +60,73 @@ button{
 button:hover{
   color: white;
   cursor: pointer;
+  border: 1px solid #fc7986;
+}
+
+a{
+  color: rgba(255, 255, 255, 0.501);
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+  text-decoration: 2px underline #fc7986;
 }
 
 span{
   color: #fc7986;
+}
+
+.block-img{
+  display:  flex;
+  justify-content: center;
+}
+
+.block-img img{
+  width: 700px;
+}
+
+.monArticle{
+  padding: 0 10px;
+}
+
+.returnHome{
+  display: flex;
+}
+
+.start{
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.end{
+  justify-content: center;
+}
+
+@media (max-width: 750px){
+  .block-img img{
+    width: 550px;
+  }
+}
+
+@media (max-width: 600px){
+  .block-img img{
+    width: 450px;
+  }
+}
+
+@media (max-width: 500px){
+
+  h1{
+    font-size: 20px;
+  }
+
+  header img{
+    width: 40px;
+  }
+
+  .block-img img{
+    width: 350px;
+  }
 }

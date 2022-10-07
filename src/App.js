@@ -5,14 +5,18 @@ import './App.css';
 import Article from './Pages/Article';
 import Home from './Pages/Home';
 
+import Header from './Components/Header';
+
 const App = () => {
   return (
         <BrowserRouter>
-              <Routes>
+            <Header/>
+            <Routes>
+
                   <Route path='/' element={<Home/>}/>
                   <Route path='/:id' element={<Article/>}/>
 
-              </Routes>
+            </Routes>
         </BrowserRouter>
   );
 }
