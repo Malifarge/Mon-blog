@@ -1,37 +1,30 @@
-import { useAllPrismicDocumentsByTag} from "@prismicio/react"
 
-import Card from "../Components/Card"
+import { useEffect,useState } from "react"
+
+
 import H2 from "../Components/H2"
+import Articles from "../Components/Articles"
 
 const Home = () =>{
 
-    const [Séries] = useAllPrismicDocumentsByTag('Séries')
-    const [JVS] = useAllPrismicDocumentsByTag('Jeux-Vidéo')
+    const [tags,setTags] = useState([])
+    
+    const fetchTags = async () =>{
+        const request = await fetch('https://Mon-blog.cdn.prismic.io/api/tags')
+        const data = await request.json()
+        setTags(data);
+    }
+
+    useEffect(()=>{
+        fetchTags()
+    },[])
 
     return(
         <> 
             <H2 home>H<span>o</span>me</H2>
-            <H2>Séries</H2>
-            {Séries && <section className="scroll">
-
-                {Séries.map(série=>{
-                   return(
-                    <Card document={série} key={série.id}/>
-                   ) 
-                })}
-
-            </section>}
-
-            <H2>Jeux-Vidéos</H2>
-            {JVS && <section className="scroll">
-                
-                {JVS.map(JV=>{
-                   return(
-                    <Card document={JV} key={JV.data.title}/>
-                   ) 
-                })}
-
-            </section>}
+            {tags.length>0 && tags.map(tag =>{
+                return <Articles tag={tag} key={tag}/>
+            })}
         </>
     )
 }
